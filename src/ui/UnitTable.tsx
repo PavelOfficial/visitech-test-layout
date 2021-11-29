@@ -1,6 +1,10 @@
 import React from 'react';
 
-import data from './data.json';
+import { getStore } from './data/store';
+
+
+console.log(getStore());
+
 
 export const UnitTable = () => {
   return (
