@@ -1,7 +1,15 @@
-
 export type UnitGroups = {
   unit_name: string,
   visitations: number[],
+  _duration: number,
+  _minDuration: number,
+  _maxDuration: number,
+  durationString: string,
+  minDurationString: string,
+  maxDurationString: string,
+  get duration(): string;
+  get minDuration(): string;
+  get maxDuration(): string;
 };
 
 export type UnitHashTable = {
@@ -11,6 +19,7 @@ export type UnitHashTable = {
 export type GroupGroup = {
   group_name: string,
   dates: { [key: string ]: boolean },
+  duration: number,
 };
 
 export type GroupHashTable = {
@@ -20,6 +29,7 @@ export type GroupHashTable = {
 export type DateGroup = {
   date: string,
   units: { [key: string ]: boolean },
+  duration: number,
 }
 
 export type DateHashTable = {
@@ -42,11 +52,4 @@ export type Unit = {
   unit_name: string,
   group_name: string,
   data: Visitation[]
-}
-
-export type Store = {
-  visitations: VisitationHashTable,
-  dateGroups: DateHashTable,
-  groupGroups: GroupHashTable,
-  unitGroups: UnitHashTable,
 }
