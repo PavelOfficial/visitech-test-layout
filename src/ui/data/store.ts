@@ -26,8 +26,8 @@ export class Store {
     };
   }
 
-  select(source, value) {
-    console.log(source, value);
+  selectGroups() {
+    return Object.values(this.groupGroups.value);
   }
 
 }

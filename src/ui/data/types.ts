@@ -19,7 +19,9 @@ export type UnitHashTable = {
 export type GroupGroup = {
   group_name: string,
   dates: { [key: string ]: boolean },
-  duration: number,
+  _duration: number,
+  durationString: string,
+  get duration(): string,
 };
 
 export type GroupHashTable = {
@@ -29,7 +31,9 @@ export type GroupHashTable = {
 export type DateGroup = {
   date: string,
   units: { [key: string ]: boolean },
-  duration: number,
+  _duration: number,
+  durationString: string,
+  get duration(): string,
 }
 
 export type DateHashTable = {
