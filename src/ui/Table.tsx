@@ -3,7 +3,7 @@ import React from 'react';
 import { StoreProvider } from './StoreContext';
 import { GroupGroups } from './GroupGroups';
 
-const Table = () => {
+export const Table = () => {
   return (
     <StoreProvider>
       <table>

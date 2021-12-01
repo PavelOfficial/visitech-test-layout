@@ -1,27 +1,27 @@
-export type UnitGroups = {
+export type UnitGroup = {
   unit_name: string,
   visitations: number[],
   _duration: number,
   _minDuration: number,
   _maxDuration: number,
-  durationString: string,
-  minDurationString: string,
-  maxDurationString: string,
+  durationString: string|null,
+  minDurationString: string|null,
+  maxDurationString: string|null,
   get duration(): string;
   get minDuration(): string;
   get maxDuration(): string;
 };
 
 export type UnitHashTable = {
-  [key: string]: UnitGroups,
+  [key: string]: UnitGroup,
 };
 
 export type GroupGroup = {
   group_name: string,
   dates: { [key: string ]: boolean },
   _duration: number,
-  durationString: string,
-  get duration(): string,
+  durationString: string|null,
+  get duration(): string;
 };
 
 export type GroupHashTable = {
@@ -32,8 +32,8 @@ export type DateGroup = {
   date: string,
   units: { [key: string ]: boolean },
   _duration: number,
-  durationString: string,
-  get duration(): string,
+  durationString: string|null,
+  get duration(): string;
 }
 
 export type DateHashTable = {

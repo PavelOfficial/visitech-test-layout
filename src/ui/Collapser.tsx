@@ -1,10 +1,12 @@
 import React, { useState, useMemo, useCallback, FunctionComponent } from 'react';
 
 type Props = {
-  renderHeader: () => React.ReactNode,
+  value: any,
+  renderHeader: (value: any) => React.ReactNode,
+  children: (a: any) => React.ReactNode,
 };
 
-const useCollapse = (renderHeader: () => React.ReactNode) => {
+const useCollapse = (renderHeader: (value: any) => React.ReactNode, value: any) => {
   const [collapsed, setCollapsed] = useState(true);
   const handleSwitch = useCallback(() => {
     setCollapsed(!collapsed);
@@ -13,7 +15,7 @@ const useCollapse = (renderHeader: () => React.ReactNode) => {
   const header = useMemo(() => {
     return (
       <tbody onClick={handleSwitch}>
-        {renderHeader()}
+        {renderHeader(value)}
       </tbody>
     );
   }, [handleSwitch]);
@@ -21,8 +23,8 @@ const useCollapse = (renderHeader: () => React.ReactNode) => {
   return { header, collapsed };
 };
 
-export const Collapser: FunctionComponent<Props> = ({ renderHeader, children }) => {
-  const { collapsed, header } = useCollapse(renderHeader);
+export const Collapser: FunctionComponent<Props> = ({ renderHeader, value, children }) => {
+  const { collapsed, header } = useCollapse(renderHeader, value);
 
   if (collapsed) {
     return (
@@ -35,7 +37,7 @@ export const Collapser: FunctionComponent<Props> = ({ renderHeader, children }) 
   return (
     <>
       {header}
-      {children}
+      {children(value)}
     </>
   );
 };

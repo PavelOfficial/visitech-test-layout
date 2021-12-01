@@ -1,12 +1,12 @@
 import React from 'react';
 
 import './App.css';
-import { UnitTable } from './ui/UnitTable';
+import { Table } from './ui/Table';
 
 function App() {
   return (
     <div className="App">
-      <UnitTable />
+      <Table />
     </div>
   );
 }

@@ -30,9 +30,9 @@ export class UnitGroups {
         _duration: seconds,
         _minDuration: seconds,
         _maxDuration: seconds,
-        durationString: '00:00:00',
-        minDurationString: '00:00:00',
-        maxDurationString: '00:00:00',
+        durationString: null,
+        minDurationString: null,
+        maxDurationString: null,
         get duration() {
           if (this.durationString === null) {
             this.durationString = toTimeString(this._duration);
