@@ -10,7 +10,7 @@ type Key = {
 export class UnitGroups {
 
   static createKey(group_name: string, unit_name: string, date: string) {
-    return group_name + '/' + unit_name + '/' + date;
+    return `${group_name}/${unit_name}/${date}`;
   }
 
   value: UnitHashTable;

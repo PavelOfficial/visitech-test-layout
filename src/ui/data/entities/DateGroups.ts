@@ -9,7 +9,7 @@ type Key = {
 export class DateGroups {
 
   static createKey(group_name: string, date: string) {
-    return group_name + '/' + date;
+    return `${group_name}/${date}`;
   }
 
   value: DateHashTable;
