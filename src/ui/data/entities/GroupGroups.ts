@@ -30,7 +30,7 @@ export class GroupGroups {
       this.value[group_name] = {
         group_name,
         dates: {},
-        _duration: duration,
+        _duration: 0,
         durationString: null,
         get duration() {
           if (this.durationString === null) {

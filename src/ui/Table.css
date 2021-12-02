@@ -1,0 +1,35 @@
+
+.table {
+    font-family: 'Arial', serif;
+    font-size: 12px;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.all-statistic {
+    background-color: #888888;
+}
+
+.group-statistic {
+    background-color: #aaaaaa;
+}
+
+.date-statistic {
+    background-color: #cccccc;
+}
+
+.unit-statistic-header {
+    background-color: #dddddd;
+}
+
+.unit-statistic {
+    background-color: #eeeeee;
+}
+
+.table th {
+    font-weight: normal;
+}
+
+.table thead {
+    cursor: pointer;
+}

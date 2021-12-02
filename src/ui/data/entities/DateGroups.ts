@@ -26,7 +26,7 @@ export class DateGroups {
       this.value[key] = {
         date,
         units: {},
-        _duration: duration,
+        _duration: 0,
         durationString: null,
         get duration() {
           if (this.durationString === null) {
@@ -39,7 +39,7 @@ export class DateGroups {
     }
 
     this.value[key].units[unit_name] = true;
-    this.value[group_name]._duration += toSeconds(durationIn);
+    this.value[key]._duration += toSeconds(durationIn);
   }
 
 }

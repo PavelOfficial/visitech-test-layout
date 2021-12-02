@@ -1,0 +1,55 @@
+[
+  {
+    "unit_name": "Nils Boehm DVM_754",
+    "group_name": "[Group 1]",
+    "data": [
+      {
+        "zone_name": "Lastochkino",
+        "time_begin": "2020-05-10 07:51:02",
+        "time_end": "2020-05-11 03:49:30",
+        "duration_in": "19:58:28"
+      }
+    ]
+  },
+  {
+    "unit_name": "Tommie Labadie PhD_997",
+    "group_name": "[Group 1]",
+    "data": []
+  },
+  {
+    "unit_name": "Marquise Dooley_528",
+    "group_name": "[Group 1]",
+    "data": [
+      {
+        "zone_name": "Dormroom",
+        "time_begin": "2020-05-09 00:00:21",
+        "time_end": "2020-05-09 03:55:27",
+        "duration_in": "3:55:06"
+      },
+      {
+        "zone_name": "XY",
+        "time_begin": "2020-05-09 04:45:15",
+        "time_end": "2020-05-09 05:10:43",
+        "duration_in": "0:25:28"
+      },
+      {
+        "zone_name": "Dormroom",
+        "time_begin": "2020-05-09 21:04:43",
+        "time_end": "2020-05-09 21:09:17",
+        "duration_in": "0:04:34"
+      },
+      {
+        "zone_name": "ABC",
+        "time_begin": "2020-05-09 21:09:17",
+        "time_end": "2020-05-09 21:14:17",
+        "duration_in": "0:05:00"
+      },
+      {
+        "zone_name": "Dormroom",
+        "time_begin": "2020-05-09 21:14:17",
+        "time_end": "2020-05-10 03:08:32",
+        "duration_in": "5:54:15"
+      }
+    ]
+  }
+]

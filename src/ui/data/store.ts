@@ -52,9 +52,10 @@ export class Store {
       const value = [];
 
       const { hasOwnProperty } = Object.prototype;
-      for (let key in dates) {
-        if (hasOwnProperty.call(dates, key)) {
-          value.push(dateGroups[key]);
+      for (let date in dates) {
+        if (hasOwnProperty.call(dates, date)) {
+          const dateGroupsKey = DateGroups.createKey(group_name, date);
+          value.push(dateGroups[dateGroupsKey]);
         }
       }
 
@@ -72,9 +73,10 @@ export class Store {
       const value = [];
 
       const { hasOwnProperty } = Object.prototype;
-      for (let key in units) {
-        if (hasOwnProperty.call(units, key)) {
-          value.push(unitGroups[key]);
+      for (let unit_name in units) {
+        if (hasOwnProperty.call(units, unit_name)) {
+          const unitGroupKey = UnitGroups.createKey(group_name, unit_name, date);
+          value.push(unitGroups[unitGroupKey]);
         }
       }
 
@@ -85,17 +87,14 @@ export class Store {
   }
 
   selectVisitations(group_name: string, date: string, unit_name: string) {
-    const visitations_key = UnitGroups.createKey(group_name, date, unit_name);
+    const visitations_key = UnitGroups.createKey(group_name, unit_name, date);
     if (!Object.prototype.hasOwnProperty.call(this.visitationHashTable, visitations_key)) {
       const { visitations } = this.unitGroups.value[visitations_key];
       const visitationValues = this.visitations.value;
       const value = [];
 
-      const { hasOwnProperty } = Object.prototype;
-      for (let key in visitations) {
-        if (hasOwnProperty.call(visitations, key)) {
-          value.push(visitationValues[key]);
-        }
+      for (let i = 0; i < visitations.length; i += 1) {
+        value.push(visitationValues[visitations[i]]);
       }
 
       this.visitationHashTable[visitations_key] = value;

@@ -23,29 +23,39 @@ export const createStore = (units: Unit[]) => {
         unit_name: unit.unit_name,
         date: date_begin,
       }, lastVisitationId, visitation.duration_in);
-      store.unitGroups.push({
-        group_name: unit.group_name,
-        unit_name: unit.unit_name,
-        date: date_end,
-      }, lastVisitationId, visitation.duration_in);
+
+      if (date_begin !== date_end) {
+        store.unitGroups.push({
+          group_name: unit.group_name,
+          unit_name: unit.unit_name,
+          date: date_end,
+        }, lastVisitationId, visitation.duration_in);
+      }
 
       store.dateGroups.push({
         group_name: unit.group_name,
         date: date_begin,
       }, unit.unit_name, visitation.duration_in);
-      store.dateGroups.push({
-        group_name: unit.group_name,
-        date: date_end,
-      }, unit.unit_name, visitation.duration_in);
+      if (date_begin !== date_end) {
+        store.dateGroups.push({
+          group_name: unit.group_name,
+          date: date_end,
+        }, unit.unit_name, visitation.duration_in);
+      }
+
 
       store.groupGroups.push(unit.group_name, date_begin, visitation.duration_in);
-      store.groupGroups.push(unit.group_name, date_end, visitation.duration_in);
+      if (date_begin !== date_end) {
+        store.groupGroups.push(unit.group_name, date_end, visitation.duration_in);
+      }
     };
 
     unit.data.forEach(collectUnitDates);
   };
 
   units.forEach(collectDates);
+
+  console.log(store);
 
   return store;
 };

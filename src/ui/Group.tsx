@@ -11,15 +11,15 @@ type Props = {
 
 const renderHeader:({ date }: any) => React.ReactNode = ({ date }) => {
   return (
-    <th>
-      <td></td>
-      <td>{date.date}</td>
-      <td></td>
-      <td></td>
-      <td>ВСЕГО ЗА {date.date} ВРЕМЕНИ:</td>
-      <td></td>
-      <td>{date.duration}</td>
-    </th>
+    <tr className='date-statistic'>
+      <th></th>
+      <th>{date.date}</th>
+      <th></th>
+      <th></th>
+      <th>ВСЕГО ЗА {date.date} ВРЕМЕНИ:</th>
+      <th></th>
+      <th>{date.duration}</th>
+    </tr>
   );
 };
 

@@ -27,7 +27,7 @@ export class UnitGroups {
       this.value[key] = {
         unit_name,
         visitations: [],
-        _duration: seconds,
+        _duration: 0,
         _minDuration: seconds,
         _maxDuration: seconds,
         durationString: null,

@@ -14,9 +14,9 @@ const useCollapse = (renderHeader: (value: any) => React.ReactNode, value: any) 
 
   const header = useMemo(() => {
     return (
-      <tbody onClick={handleSwitch}>
+      <thead onClick={handleSwitch}>
         {renderHeader(value)}
-      </tbody>
+      </thead>
     );
   }, [handleSwitch]);
 
@@ -29,7 +29,7 @@ export const Collapser: FunctionComponent<Props> = ({ renderHeader, value, child
   if (collapsed) {
     return (
       <>
-        {header};
+        {header}
       </>
     );
   }
