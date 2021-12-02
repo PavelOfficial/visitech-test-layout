@@ -1,7 +1,7 @@
 
 const MINUTE_SECONDS = 60;
 const HOUR_SECONDS = 60 * MINUTE_SECONDS;
-const DAY_SECONDS = 12 * HOUR_SECONDS;
+const DAY_SECONDS = 24 * HOUR_SECONDS;
 
 const leadingZero = (value: number) => {
   if (value < 10) {
@@ -11,7 +11,7 @@ const leadingZero = (value: number) => {
   return value;
 };
 
-const parseTimeReg = /(\d+)?(:? days )?(\d+):(\d+):(\d+)$/
+const parseTimeReg = /(:?(:?\d+) days )?(\d+):(\d+):(\d+)$/
 
 export const toSeconds = (stringTime:string) => {
   const result = stringTime.match(parseTimeReg);
